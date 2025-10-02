@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1976D2"
+    tools:context=".adicionar_tarefa">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#F5F0F0"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="62dp"
+        android:text="Tarefas"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textTarefa"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="@color/black"
+            android:fontFamily="monospace"
+            android:hint="Digite uma nova Tarefa"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textColorLink="@color/design_default_color_background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bt_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="144dp"
+        android:backgroundTint="@color/material_dynamic_tertiary0"
+        android:text="Salvar"
+        android:textSize="20sp"
+        app:iconTint="?android:attr/windowBackgroundFallback"
+        app:layout_constraintBottom_toTopOf="@+id/HOME"
+        app:layout_constraintEnd_toEndOf="@id/textInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:strokeColor="#FF0000"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/HOME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="#D32F2F"
+        android:text="Inicio"
+        android:textSize="24sp"
+        app:icon="@android:drawable/ic_menu_edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_salvar"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
