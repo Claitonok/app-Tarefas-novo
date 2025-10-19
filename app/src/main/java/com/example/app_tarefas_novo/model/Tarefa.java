@@ -11,7 +11,7 @@ public class Tarefa implements Serializable {
         this.nomeTarefa = nomeTarefa;
     }
 
-    private  Long Id;
+    private Long Id;
 
     private String nomeTarefa;
 

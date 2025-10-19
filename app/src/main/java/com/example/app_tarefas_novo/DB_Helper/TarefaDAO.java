@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-
 import com.example.app_tarefas_novo.model.Tarefa;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +19,7 @@ public class TarefaDAO implements iTarefaDAO{
         DbHelper db = new DbHelper(context);
         escreve = db.getWritableDatabase();
         le = db.getReadableDatabase();
+
     }
 
     @Override
@@ -89,6 +88,7 @@ public class TarefaDAO implements iTarefaDAO{
         c.close();
         return tarefas;
     }
+
     public Tarefa retornarUltimo(){
         String sql = "SELECT * FROM " + DbHelper.TABELA_TAREFAS + " ORDER BY id DESC; ";
         Cursor c = le.rawQuery(sql,null);
@@ -104,4 +104,5 @@ public class TarefaDAO implements iTarefaDAO{
         c.close();
         return null;
     }
+
 }

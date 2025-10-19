@@ -29,7 +29,7 @@ public class adicionar_tarefa extends AppCompatActivity {
         setContentView(R.layout.activity_adicionar_tarefa);
 
         //Pegando a informação vindo do Front!!
-        tarefaNova = findViewById(R.id.textTarefaNova);
+        tarefaNova = findViewById(R.id.text_Tarefa);
 
 
         save = findViewById(R.id.bt_salvar);

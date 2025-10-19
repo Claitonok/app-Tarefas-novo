@@ -13,4 +13,5 @@ public interface iTarefaDAO {
     public boolean deletar(long id);
 
     public List<Tarefa> listar();
+
 }
