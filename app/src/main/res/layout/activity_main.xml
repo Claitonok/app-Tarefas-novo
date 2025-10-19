@@ -27,22 +27,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
+            android:id="@+id/bt_Anota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Anotações"
+            android:text="Adicionar Anotações"
             android:textStyle="bold"
-            app:icon="@android:drawable/ic_menu_edit" />
+            app:icon="@android:drawable/ic_input_add" />
 
         <Button
-            android:id="@+id/bt_lista_tarefa"
+            android:id="@+id/bt_lista_Anotacoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/material_dynamic_tertiary0"
+            android:layout_weight="1"
+            android:backgroundTint="#002287"
             android:fontFamily="monospace"
-            android:text="Minhas Tarefas"
+            android:text="Minhas Anotacoes"
             android:textStyle="bold"
-            app:icon="@android:drawable/ic_popup_reminder" />
+            app:icon="@android:drawable/ic_popup_reminder"/>
 
         <Button
             android:id="@+id/bt_tarefas"
@@ -55,14 +57,14 @@
             app:icon="@android:drawable/ic_input_add" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/bt_lista_tarefa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#002287"
+            android:backgroundTint="@color/material_dynamic_tertiary0"
             android:fontFamily="monospace"
-            android:text="Button"
-            android:textStyle="bold" />
+            android:text="Minhas Tarefas"
+            android:textStyle="bold"
+            app:icon="@android:drawable/ic_popup_reminder" />
 
     </LinearLayout>
 

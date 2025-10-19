@@ -9,13 +9,11 @@ import android.view.View;
 
 import android.widget.Button;
 
-import com.example.app_tarefas_novo.DB_Helper.TarefaDAO;
-import com.example.app_tarefas_novo.adapte.TarefaAdapte;
-import com.example.app_tarefas_novo.model.Tarefa;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button bt_ta;
+
+    private Button bt_Anotacoes;
 
     private Button bt_lista;
 
@@ -44,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Pag de adicionar uma Anotação!
+        bt_Anotacoes = findViewById(R.id.bt_Anota);
+        bt_Anotacoes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Anotacoes.class);
+                startActivity(intent);
+            }
+        });
 //        TarefaDAO tarefaDAO = new TarefaDAO(this);
 //        tarefaDAO.deletar(7);
 

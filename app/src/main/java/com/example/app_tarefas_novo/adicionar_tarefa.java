@@ -1,7 +1,6 @@
 package com.example.app_tarefas_novo;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app_tarefas_novo.DB_Helper.TarefaDAO;
 import com.example.app_tarefas_novo.adapte.TarefaAdapte;
-import com.example.app_tarefas_novo.databinding.ActivityMainBinding;
 import com.example.app_tarefas_novo.model.Tarefa;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class adicionar_tarefa extends AppCompatActivity {
 
@@ -27,7 +21,7 @@ public class adicionar_tarefa extends AppCompatActivity {
 
     private TextInputEditText tarefaNova;
 
-    private Button bt_anotacoes;
+    private Button bt_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +29,7 @@ public class adicionar_tarefa extends AppCompatActivity {
         setContentView(R.layout.activity_adicionar_tarefa);
 
         //Pegando a informação vindo do Front!!
-        tarefaNova = findViewById(R.id.textTarefa);
+        tarefaNova = findViewById(R.id.textTarefaNova);
 
 
         save = findViewById(R.id.bt_salvar);
@@ -96,9 +90,9 @@ public class adicionar_tarefa extends AppCompatActivity {
         });
 
 
-        bt_anotacoes = findViewById(R.id.HOME);
+        bt_home = findViewById(R.id.HOME);
 
-        bt_anotacoes.setOnClickListener(new View.OnClickListener() {
+        bt_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 /*
