@@ -80,6 +80,7 @@ public class Anotacoes extends AppCompatActivity {
             }
         });
 
+
         //AQUI O APP VOLTA PARA A HOME
         bt_home_pag = findViewById(R.id.HOME);
         bt_home_pag.setOnClickListener(new View.OnClickListener() {
