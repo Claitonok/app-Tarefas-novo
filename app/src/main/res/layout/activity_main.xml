@@ -36,7 +36,7 @@
             app:icon="@android:drawable/ic_input_add" />
 
         <Button
-            android:id="@+id/bt_lista_Anotacoes"
+            android:id="@+id/bt_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

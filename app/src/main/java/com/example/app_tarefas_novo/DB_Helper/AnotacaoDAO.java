@@ -31,7 +31,7 @@ public class AnotacaoDAO {
         cv.put("nome", anotacao.getAnotacao());
 
         try{
-            escreve.insert(DbHelper_Anotacoes.NOME_DB_AN,null,cv);
+            escreve.insert(DbHelper_Anotacoes.ANOTACOES_LISTA,null,cv);
             Log.e("INFO","Anotação salva com sucesso");
         }catch(Exception e){
             Log.e("INFO","Erro ao salvar Anotação" + e.getMessage());
@@ -48,7 +48,7 @@ public class AnotacaoDAO {
 
         try{
             String[] args = {anotacao.getId().toString()};
-            escreve.update(DbHelper_Anotacoes.NOME_DB_AN,cv,"id=?",args);
+            escreve.update(DbHelper_Anotacoes.ANOTACOES_LISTA,cv,"id=?",args);
             Log.e("INFO","anotacao salva com sucesso");
         }catch(Exception e){
             Log.e("INFO","Erro ao salvar anotacao" + e.getMessage());
@@ -62,7 +62,7 @@ public class AnotacaoDAO {
 
         try{
             String[] args = {String.valueOf(id)};
-            escreve.delete(DbHelper_Anotacoes.NOME_DB_AN,"id=?",args);
+            escreve.delete(DbHelper_Anotacoes.ANOTACOES_LISTA,"id=?",args);
             Log.e("INFO","anotacao removida com sucesso");
         }catch(Exception e){
             Log.e("INFO","Erro ao remover anotacao" + e.getMessage());
@@ -77,7 +77,7 @@ public class AnotacaoDAO {
 
         List<Anotacao> anotacaoList = new ArrayList<>();
 
-        String sql = "SELECT * FROM " + DbHelper_Anotacoes.NOME_DB_AN + ";";
+        String sql = "SELECT * FROM " + DbHelper_Anotacoes.ANOTACOES_LISTA + ";";
         Cursor c = le.rawQuery(sql, null);
 
         if (c.moveToFirst()){
@@ -95,7 +95,7 @@ public class AnotacaoDAO {
 
     public Anotacao retornarUltimo_Anotacao(){
 
-        String sql = "SELECT * FROM " + DbHelper_Anotacoes.NOME_DB_AN + " ORDER BY id DESC; ";
+        String sql = "SELECT * FROM " + DbHelper_Anotacoes.ANOTACOES_LISTA + " ORDER BY id DESC; ";
         Cursor c = le.rawQuery(sql,null);
 
         if (c.moveToFirst()){
@@ -108,5 +108,11 @@ public class AnotacaoDAO {
         }
         c.close();
         return null;
+    }
+
+    public Cursor teste(){
+        String sql = "SELECT * FROM " + DbHelper_Anotacoes.ANOTACOES_LISTA + ";";
+       return le.rawQuery(sql,null);
+
     }
 }
