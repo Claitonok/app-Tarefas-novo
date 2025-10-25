@@ -177,4 +177,5 @@ public class AnotacaoAdapte extends RecyclerView.Adapter<AnotacaoViewHolder> {
     }
 
 
+
 }
