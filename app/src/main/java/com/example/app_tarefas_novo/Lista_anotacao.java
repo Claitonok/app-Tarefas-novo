@@ -13,33 +13,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_tarefas_novo.DB_Helper.AnotacaoDAO;
+import com.example.app_tarefas_novo.model.Anotacao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Lista_anotacao extends AppCompatActivity {
 
     private ImageButton ini;
 
-    private ListView listv;
+    private RecyclerView recy;
 
-    private ArrayList<String> itens;
-    private ArrayAdapter<String> adapter;
-    private AnotacaoDAO anotacaoDAO;
-
+    private List<Anotacao> listeAnotacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_anotacao);
-
-        listv = findViewById(R.id.lis_vie);
-        itens = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itens);
-        listv.setAdapter(adapter);
-//        listarDados();
-
 
 
         ini = findViewById(R.id.inicio);
@@ -55,20 +48,9 @@ public class Lista_anotacao extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        listarDados();
-    }
-
-    private void listarDados(){
-        Cursor cursor = anotacaoDAO.teste();
-        if (cursor.moveToFirst()) {
-            do {
-                String anotacao = cursor.getString(cursor.getColumnIndex("Anotacao"));
-                itens.add(anotacao);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        adapter.notifyDataSetChanged();
 
     }
+
+
 
 }

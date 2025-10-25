@@ -110,9 +110,5 @@ public class AnotacaoDAO {
         return null;
     }
 
-    public Cursor teste(){
-        String sql = "SELECT * FROM " + DbHelper_Anotacoes.ANOTACOES_LISTA + ";";
-       return le.rawQuery(sql,null);
 
-    }
 }

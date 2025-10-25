@@ -10,7 +10,7 @@
 
 
     <include
-        android:id="@+id/includemain"
+        android:id="@+id/includeAnotacao"
         layout="@layout/activity_content_main"
         android:visibility="visible"/>
 

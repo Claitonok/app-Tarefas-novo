@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppTarefasnovo"
         tools:targetApi="31">
         <activity
+            android:name=".Re_liste_anotacao"
+            android:exported="false" />
+        <activity
             android:name=".Lista_anotacao"
             android:exported="false" />
         <activity
