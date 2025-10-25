@@ -107,7 +107,7 @@ public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
             });
 
 
-            //Opção Editar atraves de um click no botao ImageButton!!!
+            //Opção  Editar atraves de um click no botao ImageButton!!!
             Tarefa tf = listaTarefas.get(position);
             holder.nomeTarefa.setText(tf.getNomeTarefa());
             holder.btnEditar.setOnClickListener(new View.OnClickListener() {
