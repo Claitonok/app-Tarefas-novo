@@ -32,5 +32,4 @@ public class Anotacao implements Serializable {
         this.Anotacao = anotacao;
     }
 
-
 }

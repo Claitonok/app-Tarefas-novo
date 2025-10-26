@@ -162,7 +162,7 @@ public class AnotacaoAdapte extends RecyclerView.Adapter<AnotacaoViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return anotacaoList != null ? anotacaoList.size() : 0;
     }
 
     public void adicinar(Anotacao anotacao){

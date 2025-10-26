@@ -8,14 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_tarefas_novo.DB_Helper.AnotacaoDAO;
+import com.example.app_tarefas_novo.adapte.AnotacaoAdapte;
 import com.example.app_tarefas_novo.model.Anotacao;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import java.util.List;
 
 public class Lista_anotacao extends AppCompatActivity {
 
-    private ImageButton ini;
+    private AnotacaoAdapte anotacaoAdapte;
 
-    private RecyclerView recy;
+    private RecyclerView recyclerViewAnotacao;
 
     private List<Anotacao> listeAnotacao;
 
@@ -34,23 +34,39 @@ public class Lista_anotacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_anotacao);
 
+        // Configurando o gerenciador de layout para ser uma lista.
+        recyclerViewAnotacao = findViewById(R.id.re_anotacao);
 
-        ini = findViewById(R.id.inicio);
-        ini.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        listeAnotacao = new ArrayList<>();
+
+        anotacaoAdapte = new AnotacaoAdapte(listeAnotacao);
+
+        recyclerViewAnotacao.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewAnotacao.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewAnotacao.setAdapter(anotacaoAdapte);
+
+        configurarRecyclerAnotacao();
     }
+
+
 
     @Override
     protected void onResume() {
+        configurarRecyclerAnotacao();
         super.onResume();
-
     }
 
+private void configurarRecyclerAnotacao() {
 
+    // Adiciona o adapter que irá anexar os objetos à lista.
+    AnotacaoDAO anotacaoDAO = new AnotacaoDAO(this);
+
+    listeAnotacao = anotacaoDAO.listarAnotacoes();
+
+    anotacaoAdapte.setListaAnotacao(listeAnotacao);
+    anotacaoAdapte.notifyDataSetChanged();
 
 }
+
+}
+
