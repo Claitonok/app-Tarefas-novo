@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button bt_lista;
 
+    private Button bt_lis_anote;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +53,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        TarefaDAO tarefaDAO = new TarefaDAO(this);
-//        tarefaDAO.deletar(7);
+
+        bt_lis_anote = findViewById(R.id.bt_list);
+        bt_lis_anote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Lista_anotacao.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
 
     }
 

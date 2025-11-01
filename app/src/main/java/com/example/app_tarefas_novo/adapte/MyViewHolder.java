@@ -18,12 +18,14 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
 
     public ImageButton btnInicio;
 
+
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         nomeTarefa = (TextView) itemView.findViewById(R.id.tarefa2);
         btnEditar = (ImageButton) itemView.findViewById(R.id.btnEdit);
         btnExcluir = (ImageButton) itemView.findViewById(R.id.btnDelete);
         btnInicio = (ImageButton) itemView.findViewById(R.id.inicio);
+
 
     }
 }

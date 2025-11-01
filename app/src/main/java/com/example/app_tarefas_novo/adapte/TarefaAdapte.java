@@ -2,6 +2,7 @@ package com.example.app_tarefas_novo.adapte;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -54,7 +55,7 @@ public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
             Tarefa tarefa = listaTarefas.get(position);
             holder.nomeTarefa.setText(tarefa.getNomeTarefa());
