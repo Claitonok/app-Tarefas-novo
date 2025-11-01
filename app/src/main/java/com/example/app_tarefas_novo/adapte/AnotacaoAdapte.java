@@ -15,11 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_tarefas_novo.DB_Helper.AnotacaoDAO;
-import com.example.app_tarefas_novo.DB_Helper.TarefaDAO;
 import com.example.app_tarefas_novo.MainActivity;
 import com.example.app_tarefas_novo.R;
 import com.example.app_tarefas_novo.model.Anotacao;
-import com.example.app_tarefas_novo.model.Tarefa;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
