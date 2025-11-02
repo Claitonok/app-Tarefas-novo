@@ -44,7 +44,7 @@ public class adicionar_tarefa extends AppCompatActivity {
                     String nomeTarefa = tarefaNova.getText().toString();
 
                     //executar a ação salvar
-                    TarefaDAO tarefaDAO = new TarefaDAO(getApplicationContext());
+                    TarefaDAO tarefaDAO = new TarefaDAO(getBaseContext());
 
                     Tarefa tr = new Tarefa();
                     tr.setNomeTarefa(nomeTarefa);

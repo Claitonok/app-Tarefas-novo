@@ -42,8 +42,6 @@ public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-            holder.nomeTarefa.setText(listaTarefas.get(position).getNomeTarefa());
-
             Tarefa tarefa = listaTarefas.get(position);
 
             holder.btnExcluir.setOnClickListener(new Button.OnClickListener() {

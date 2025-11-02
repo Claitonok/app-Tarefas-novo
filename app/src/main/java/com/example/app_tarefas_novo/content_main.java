@@ -15,8 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class content_main extends AppCompatActivity {
 
-    public Button bt_teste;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

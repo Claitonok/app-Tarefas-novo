@@ -24,12 +24,6 @@ public class paglistaTarefas extends AppCompatActivity {
         configurarRecycler();
     }
 
-    @Override
-    protected void onResume() {
-        configurarRecycler();
-        super.onResume();
-    }
-
     private void configurarRecycler() {
 
         // Adiciona o adapter que irá anexar os objetos à lista.
