@@ -71,7 +71,6 @@ public class TarefaDAO implements iTarefaDAO{
     @Override
     public List<Tarefa> listar() {
         List<Tarefa> tarefas = new ArrayList<>();
-
         String sql = "SELECT * FROM " + DbHelper.TABELA_TAREFAS + ";";
         Cursor c = le.rawQuery(sql, null);
 

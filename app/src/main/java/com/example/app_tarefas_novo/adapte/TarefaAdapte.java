@@ -20,12 +20,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import org.jspecify.annotations.NonNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
 
-    private List<Tarefa> listaTarefas = new ArrayList<>();
+    private List<Tarefa> listaTarefas;
 
     public TarefaAdapte(List<Tarefa> listaTarefas) {
         this.listaTarefas = listaTarefas;
@@ -34,15 +33,16 @@ public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
     public TarefaAdapte() {}
 
     @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new MyViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_lista, parent, false));
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolder(LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_lista, parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
             Tarefa tarefa = listaTarefas.get(position);
+            holder.nomeTarefa.setText(tarefa.getNomeTarefa());
 
             holder.btnExcluir.setOnClickListener(new Button.OnClickListener() {
                 @Override
