@@ -8,9 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_tarefas_novo.DB_Helper.TarefaDAO;
 import com.example.app_tarefas_novo.adapte.TarefaAdapte;
-import com.example.app_tarefas_novo.model.Tarefa;
-
-import java.util.List;
 
 public class paglistaTarefas extends AppCompatActivity {
 
@@ -18,8 +15,6 @@ public class paglistaTarefas extends AppCompatActivity {
     private RecyclerView recycler;
 
     private TarefaAdapte tarefaAdapte;
-
-    private List<Tarefa> listaTarefas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +46,5 @@ public class paglistaTarefas extends AppCompatActivity {
         recycler.setAdapter(tarefaAdapte);
         recycler.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
-
     }
 }
