@@ -65,8 +65,6 @@ public class TarefaDAO implements iTarefaDAO{
             Log.e("INFO","Erro ao remover tarefa" + e.getMessage());
             return false;
         }
-
-
         return true;
     }
 
@@ -77,31 +75,27 @@ public class TarefaDAO implements iTarefaDAO{
         String sql = "SELECT * FROM " + DbHelper.TABELA_TAREFAS + ";";
         Cursor c = le.rawQuery(sql, null);
 
-        if (c.moveToFirst()){
-          do {
-              Long id = c.getLong(c.getColumnIndex("id"));
-              String nomeTarefa = c.getString(c.getColumnIndex("nome"));
+        while(c.moveToNext()){
 
-              tarefas.add(new Tarefa(id, nomeTarefa));
-            } while (c.moveToNext());
+            Long id = c.getLong(c.getColumnIndex("id"));
+            String nomeTarefa = c.getString(c.getColumnIndex("nome"));
+
+            tarefas.add(new Tarefa(id, nomeTarefa));
         }
         c.close();
         return tarefas;
     }
 
     public Tarefa retornarUltimo(){
-        String sql = "SELECT * FROM " + DbHelper.TABELA_TAREFAS + " ORDER BY id DESC; ";
+        String sql = "SELECT * FROM " + DbHelper.TABELA_TAREFAS + " ORDER BY id DESC" + ";";
         Cursor c = le.rawQuery(sql,null);
 
         if (c.moveToFirst()){
-            do {
-                Long id = c.getLong(c.getColumnIndex("id"));
-                String nomeTarefa = c.getString(c.getColumnIndex("nome"));
-
-                return new Tarefa(id, nomeTarefa);
-            } while (c.moveToNext());
+            Long id = c.getLong(c.getColumnIndex("id"));
+            String nomeTarefa = c.getString(c.getColumnIndex("nome"));
+            c.close();
+            return new Tarefa(id, nomeTarefa);
         }
-        c.close();
         return null;
     }
 

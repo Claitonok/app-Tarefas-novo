@@ -33,23 +33,18 @@ public class TarefaAdapte extends RecyclerView.Adapter<MyViewHolder> {
 
     public TarefaAdapte() {}
 
-    public void setListaTarefas(List<Tarefa> listaTarefas){
-        this.listaTarefas = listaTarefas;
-    }
-
     @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-            View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lista, parent, false);
-
-            return new MyViewHolder(itemLista);
+            return new MyViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_lista, parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+            holder.nomeTarefa.setText(listaTarefas.get(position).getNomeTarefa());
+
             Tarefa tarefa = listaTarefas.get(position);
-            holder.nomeTarefa.setText(tarefa.getNomeTarefa());
 
             holder.btnExcluir.setOnClickListener(new Button.OnClickListener() {
                 @Override
